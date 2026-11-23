@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Su correo se mudó · Mediinsumos S.A.S.</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --tinta:#1b2430;
+    --suave:#5a6676;
+    --linea:#e2e6ec;
+    --papel:#ffffff;
+    --fondo:#f4f6f9;
+    --azul:#1f5f8b;
+    --azul-claro:#eaf2f8;
+    --verde:#1d7a4f;
+    --verde-claro:#e8f5ee;
+    --ambar:#9a6700;
+    --ambar-claro:#fdf6e3;
+  }
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--fondo);color:var(--tinta);
+    line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  .hoja{max-width:780px;margin:0 auto;background:var(--papel);
+    box-shadow:0 1px 3px rgba(27,36,48,.08),0 12px 40px rgba(27,36,48,.06)}
+  .cabeza{padding:56px 56px 44px;border-bottom:1px solid var(--linea)}
+  .sello{display:inline-block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--azul);background:var(--azul-claro);padding:6px 12px;border-radius:3px;font-weight:600}
+  h1{font-size:33px;line-height:1.2;margin:20px 0 14px;letter-spacing:-.02em;font-weight:650}
+  .bajada{font-size:17px;color:var(--suave);max-width:58ch}
+  .fecha{margin-top:26px;font-size:13px;color:var(--suave);padding-top:18px;border-top:1px solid var(--linea)}
+  .cuerpo{padding:12px 56px 56px}
+  section{padding:38px 0;border-bottom:1px solid var(--linea)}
+  section:last-child{border-bottom:none}
+  h2{font-size:22px;margin-bottom:8px;letter-spacing:-.01em;font-weight:650}
+  h2 .n{color:var(--azul);font-variant-numeric:tabular-nums;margin-right:10px;font-weight:600}
+  h3{font-size:16px;margin:26px 0 8px;font-weight:650}
+  p{margin:12px 0;max-width:64ch}
+  .guia{font-size:14px;color:var(--suave);margin-bottom:20px}
+  strong{font-weight:650}
+  .caja{border-radius:6px;padding:20px 22px;margin:22px 0;border:1px solid}
+  .caja p{margin:8px 0}
+  .caja p:first-child{margin-top:0}
+  .caja p:last-child{margin-bottom:0}
+  .caja .tit{font-weight:650;font-size:14px;letter-spacing:.02em;margin-bottom:10px;
+    text-transform:uppercase;font-size:11.5px;letter-spacing:.12em}
+  .listo{background:var(--verde-claro);border-color:#c3e3d2}
+  .listo .tit{color:var(--verde)}
+  .ojo{background:var(--ambar-claro);border-color:#f0e0b8}
+  .ojo .tit{color:var(--ambar)}
+  .nota{background:var(--azul-claro);border-color:#cfe2ef}
+  .nota .tit{color:var(--azul)}
+  ul{margin:14px 0 14px 4px;list-style:none}
+  li{position:relative;padding-left:26px;margin:9px 0;max-width:62ch}
+  li::before{content:"";position:absolute;left:6px;top:11px;width:5px;height:5px;
+    border-radius:50%;background:var(--azul)}
+  ul.ticks li::before{content:"✓";position:absolute;left:0;top:0;width:auto;height:auto;
+    background:none;color:var(--verde);font-weight:700;font-size:15px}
+  ul.faltan li::before{content:"○";position:absolute;left:0;top:0;width:auto;height:auto;
+    background:none;color:var(--ambar);font-weight:700;font-size:14px}
+  .antes-despues{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
+  .ad{border:1px solid var(--linea);border-radius:6px;padding:18px 20px}
+  .ad .rot{font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--suave);font-weight:650;margin-bottom:10px}
+  .ad.mal{background:#fdf4f3;border-color:#f0d8d4}
+  .ad.bien{background:var(--verde-claro);border-color:#c3e3d2}
+  .ad p{font-size:14.5px;margin:6px 0}
+  .pasos{counter-reset:p;margin:22px 0}
+  .paso{position:relative;padding-left:48px;margin:20px 0}
+  .paso::before{counter-increment:p;content:counter(p);position:absolute;left:0;top:-1px;
+    width:30px;height:30px;border-radius:50%;background:var(--azul);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:650}
+  .paso h3{margin:4px 0 4px}
+  .paso p{font-size:15px;margin:4px 0}
+  table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14.5px}
+  th{text-align:left;padding:10px 12px;background:#f7f9fb;border-bottom:2px solid var(--linea);
+    font-weight:650;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--suave)}
+  td{padding:11px 12px;border-bottom:1px solid var(--linea);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  .pie{padding:34px 56px 46px;background:#f7f9fb;border-top:1px solid var(--linea);
+    font-size:13.5px;color:var(--suave)}
+  .pie strong{color:var(--tinta)}
+  .analogia{border-left:3px solid var(--azul);padding:4px 0 4px 20px;margin:22px 0;
+    color:var(--suave);font-size:15.5px}
+  .analogia strong{color:var(--tinta)}
+  @media (max-width:720px){
+    .cabeza{padding:36px 24px 30px}
+    .cuerpo{padding:8px 24px 36px}
+    .pie{padding:28px 24px 34px}
+    h1{font-size:26px}
+    .antes-despues{grid-template-columns:1fr}
+  }
+  @media print{
+    body{background:#fff}
+    .hoja{box-shadow:none;max-width:100%}
+    section{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="hoja">
+
+  <header class="cabeza">
+    <span class="sello">Informe para Mediinsumos S.A.S.</span>
+    <h1>Su correo se mudó de casa</h1>
+    <p class="bajada">Qué pasaba, qué hicimos, qué va a pasar en los próximos días
+      y qué necesitamos de ustedes. Sin tecnicismos.</p>
+    <p class="fecha">Lunes 23 de noviembre de 2026 · Bogotá</p>
+  </header>
+
+  <div class="cuerpo">
+
+    <section>
+      <h2><span class="n">1</span>El problema</h2>
+      <p class="guia">Por qué había que hacer algo, y por qué no podía esperar.</p>
+
+      <p>El correo de la empresa vivía en un servidor que <strong>se quedó sin espacio</strong>.
+        No «casi sin espacio»: lleno, al 100%.</p>
+
+      <p class="analogia">Imagínese un buzón físico en la portería, atiborrado hasta el tope.
+        El cartero llega con una carta, ve que no cabe, y <strong>se la lleva de vuelta</strong>.
+        Usted nunca se entera de que esa carta existió.</p>
+
+      <p>Eso era exactamente lo que estaba pasando. El servidor rechazaba mensajes que entraban,
+        y quien los enviaba recibía un aviso de error — o a veces ni eso.</p>
+
+      <div class="antes-despues">
+        <div class="ad mal">
+          <div class="rot">Antes</div>
+          <p>Plan de <strong>30 GB</strong>, usados <strong>30 GB</strong>.</p>
+          <p>Correo real guardado: <strong>41,84 GB</strong>, repartido en cinco buzones.</p>
+          <p>Creciendo cerca de <strong>1 GB por semana</strong>.</p>
+          <p><code>info@</code> y <code>contacto@</code> <strong>ni siquiera existían</strong>:
+            todo lo que llegaba ahí se rechazaba.</p>
+        </div>
+        <div class="ad bien">
+          <div class="rot">Ahora</div>
+          <p><strong>50 GB por persona</strong>, no un fondo común que se pelean entre todos.</p>
+          <p>Cinco buzones con su propio espacio, más tres direcciones compartidas.</p>
+          <p>Espacio para años, no para meses.</p>
+          <p><code>info@</code>, <code>contacto@</code> y <code>ventas@</code>
+            <strong>ya reciben</strong>.</p>
+        </div>
+      </div>
+
+      <div class="caja ojo">
+        <div class="tit">Lo que esto significa sin rodeos</div>
+        <p>Durante las últimas semanas <strong>se perdieron correos entrantes</strong>. No sabemos
+          cuántos ni de quién, porque el servidor los rechazaba antes de registrarlos.</p>
+        <p>Si un cliente o proveedor dice que escribió y nunca le respondieron,
+          <strong>es muy probable que sea verdad y que nadie lo haya visto</strong>.
+          Pídanle que lo reenvíe: ahora sí entra.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">2</span>Qué hicimos hoy</h2>
+      <p class="guia">El cambio quedó hecho el lunes 23 de noviembre a las 2:27 de la tarde.</p>
+
+      <p class="analogia">Siguiendo con la comparación: <strong>no cambiamos la dirección de la
+        empresa</strong>. Lo que cambiamos fue la oficina de correos que la atiende. Las cartas
+        siguen llegando al mismo lugar de siempre — solo que ahora hay quien las reciba.</p>
+
+      <p>Su dirección de correo <strong>no cambió</strong>. Sigue siendo exactamente la misma
+        que han usado siempre. Nadie tiene que avisarle a ningún cliente.</p>
+
+      <h3>Lo que quedó funcionando</h3>
+      <ul class="ticks">
+        <li><strong>Los cinco buzones reciben correo por Microsoft 365.</strong> Está confirmado
+          con correo real, no con pruebas: a los pocos minutos del cambio entraron mensajes de
+          Clínica Medihelp y del INVIMA, y los tres llegaron bien.</li>
+        <li><strong>Tres direcciones nuevas que antes rechazaban todo</strong> —
+          <code>info@</code>, <code>contacto@</code> y <code>ventas@</code> — ya reciben, y las
+          ve todo el equipo sin costo adicional.</li>
+        <li><strong>Las tres firmas de seguridad del dominio quedaron activas.</strong> Son las
+          que le demuestran al mundo que un correo salió de verdad de Mediinsumos y no de
+          alguien suplantándolos. Es lo que evita que lo que ustedes envían caiga en la carpeta
+          de spam del cliente.</li>
+        <li><strong>El correo viejo se está copiando.</strong> Los 41,84 GB se están trayendo
+          desde el servidor anterior. Arrancó esta tarde.</li>
+      </ul>
+
+      <div class="caja listo">
+        <div class="tit">Lo más importante de todo</div>
+        <p><strong>El servidor anterior no se apagó.</strong> Sigue encendido, pago hasta agosto
+          de 2027, y con todo su correo adentro.</p>
+        <p>No se borra ni un mensaje de allá hasta que las cinco personas confirmen, una por una,
+          que tienen su correo completo. Si algo sale mal, nos devolvemos en minutos y no se
+          pierde nada.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">3</span>Qué va a pasar esta semana</h2>
+      <p class="guia">Tres cosas que les van a parecer raras y son completamente normales.</p>
+
+      <h3>El buzón se va a ver casi vacío al principio</h3>
+      <p>Esto asusta y no debería. El correo histórico <strong>se está copiando ahora mismo</strong>
+        y va apareciendo solo, de lo más reciente a lo más antiguo, durante
+        <strong>dos o tres días</strong>.</p>
+      <p class="analogia">Es una mudanza: los camiones ya salieron, pero no llegan todos al tiempo.
+        <strong>Nada se perdió.</strong> Está en camino, y mientras tanto el original sigue
+        guardado en la casa vieja.</p>
+
+      <h3>Les va a pedir instalar una app en el celular</h3>
+      <p>Se llama <strong>Microsoft Authenticator</strong>. Sirve para confirmar que es usted
+        quien está entrando, y no alguien que se consiguió su contraseña.</p>
+      <p>Es obligatorio y lo recomendamos dejarlo así. Mediinsumos maneja órdenes médicas y
+        correspondencia del INVIMA: no es correo cualquiera. Se configura una sola vez, toma
+        dos minutos.</p>
+
+      <h3>Van a entrar con una contraseña nueva</h3>
+      <p>Se las entregamos a cada uno por aparte, nunca por el grupo. Al entrar la primera vez
+        el sistema les pide cambiarla por una propia.</p>
+    </section>
+
+    <section>
+      <h2><span class="n">4</span>Qué falta</h2>
+      <p class="guia">Lo decimos antes de que pregunten, no después.</p>
+
+      <ul class="faltan">
+        <li><strong>Terminar la copia del histórico.</strong> Está corriendo. Cuando termine
+          comparamos buzón por buzón contra las cifras que medimos antes de empezar, para
+          confirmar que no faltó nada. Si algo falta, se corre una segunda pasada — por eso
+          dejamos el proceso abierto y no automático.</li>
+        <li><strong>Probar el correo saliente.</strong> Falta confirmar, enviando de verdad,
+          que lo que ustedes mandan llega a la bandeja de entrada del cliente y no a spam.
+          Lo probamos contra Gmail, Outlook y un dominio corporativo.</li>
+        <li><strong>Acompañar a cada persona en su primer ingreso.</strong> Uno por uno, hasta
+          que esté adentro y viendo su correo.</li>
+        <li><strong>Desconectar una descarga automática</strong> que tenía
+          <code>logistica@</code> hacia una cuenta de Gmail. Apunta al servidor viejo y hay que
+          soltarla para que no interfiera con la copia.</li>
+        <li><strong>Reforzar la seguridad del dominio en unas semanas.</strong> Hoy quedó en modo
+          permisivo a propósito, para que nada se bloquee por error mientras todo se acomoda.
+          Una vez estable se aprieta.</li>
+      </ul>
+
+      <div class="caja ojo">
+        <div class="tit">Algo que conviene saber desde ya</div>
+        <p>La copia trae <strong>el correo</strong>. No trae los contactos guardados, ni el
+          calendario, ni las firmas, ni las reglas de carpetas automáticas.</p>
+        <p>Eso se vuelve a armar a mano, y es rápido — pero vale la pena saberlo antes de abrir
+          Outlook y extrañar la libreta de direcciones. Si alguien tiene contactos valiosos
+          guardados, <strong>avísenos antes de dar de baja el servidor viejo</strong> y los
+          exportamos.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">5</span>Qué necesitamos de ustedes</h2>
+      <p class="guia">Tres cosas, y ninguna es técnica.</p>
+
+      <div class="pasos">
+        <div class="paso">
+          <h3>Entrar al correo y avisar que entró</h3>
+          <p>Cada persona, con la contraseña que le mandamos. Si algo no funciona, escribirnos
+            de una — no esperar a mañana.</p>
+        </div>
+        <div class="paso">
+          <h3>Revisar que su correo viejo esté completo</h3>
+          <p>En dos o tres días, cuando la copia termine. Busquen cosas puntuales: un mensaje
+            de hace un año, una carpeta importante, un adjunto que recuerden.
+            <strong>Esa confirmación es la que nos deja cerrar el servidor viejo.</strong></p>
+        </div>
+        <div class="paso">
+          <h3>Avisarnos si un cliente reclama</h3>
+          <p>Si alguien dice que escribió y no le respondieron, pídanle que reenvíe y cuéntennos.
+            Nos sirve para medir cuánto alcanzó a perderse mientras el servidor estaba lleno.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="n">6</span>Resumen en una tabla</h2>
+      <table>
+        <thead>
+          <tr><th>Qué</th><th>Estado</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Los cinco buzones reciben correo</td><td><strong>Listo</strong> · confirmado con correo real</td></tr>
+          <tr><td><code>info@</code>, <code>contacto@</code>, <code>ventas@</code></td><td><strong>Listo</strong> · antes rechazaban todo</td></tr>
+          <tr><td>Firmas de seguridad del dominio</td><td><strong>Listo</strong> · las tres activas</td></tr>
+          <tr><td>Espacio de almacenamiento</td><td><strong>Listo</strong> · 50 GB por persona</td></tr>
+          <tr><td>Copia del correo histórico</td><td>En curso · 2 a 3 días</td></tr>
+          <tr><td>Prueba de correo saliente</td><td>Pendiente</td></tr>
+          <tr><td>Primer ingreso de cada persona</td><td>Pendiente · los acompañamos</td></tr>
+          <tr><td>Servidor anterior</td><td>Encendido y pago hasta agosto de 2027</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+  </div>
+
+  <footer class="pie">
+    <p><strong>¿Dudas?</strong> Escríbannos. Durante los próximos días vamos a estar pendientes
+      del correo de todos, y preferimos que pregunten de más.</p>
+    <p style="margin-top:14px">Mediinsumos S.A.S. · NIT 900.838.110-4<br>
+      Informe preparado el 23 de noviembre de 2026.</p>
+  </footer>
+
+</div>
+</body>
+</html>
